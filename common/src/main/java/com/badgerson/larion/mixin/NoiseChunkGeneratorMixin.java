@@ -15,7 +15,7 @@ public class NoiseChunkGeneratorMixin {
   @Inject(method = "createFluidPicker", at = @At("HEAD"), cancellable = true)
   private static void createFluidPicker(NoiseGeneratorSettings settings,
       CallbackInfoReturnable<Aquifer.FluidPicker> ci) {
-    if (settings.seaLevel() != 0)
+    if (settings.seaLevel() != 0) {
       // This mixin modifies the aquifer generator so that the "bedrock lava
       // level" (in vanilla hardcoded to -54) is instead determined by the world's
       // minimum Y level, allowing for deeper caves without them being flooded.

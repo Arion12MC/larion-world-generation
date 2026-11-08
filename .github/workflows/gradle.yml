@@ -38,9 +38,8 @@ jobs:
         if: ${{ matrix.java == '21' }}
         uses: actions/upload-artifact@v4
         with:
-          name: Output fabric
-          path: fabric/build/libs/
-          name2: Output forge
-          path2: forge/build/libs/
-          name3: Output neoforge
-          path3: neoforge/build/libs/
+          name: fabric forge neoforge
+          path: |
+                  fabric/build/libs/
+                  forge/build/libs/
+                  neoforge/build/libs/
